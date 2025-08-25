@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Our Team</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Professional Font from Google Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #4A4A4A; /* Softer dark color */
+      background: linear-gradient(to right, #f4fcf4, #e8f5e8);
+    }
+    
+    .logo {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 10;
+      width: 100px; /* Slightly smaller logo */
+      height: auto;
+    }
+    
+    h1 {
+      font-family: 'Playfair Display', serif;
+      text-align: center;
+      margin-top: 60px;
+      font-size: 38px;
+      color: #005646; /* Deeper, more professional green */
+      letter-spacing: 1px;
+    }
+    
+    .subtitle {
+      text-align: center;
+      color: #555;
+      margin-top: 10px;
+      font-size: 17px;
+      margin-bottom: 60px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      padding: 0 30px 60px;
+      position: relative;
+    }
+    
+    .contact-info {
+      flex: 0.8;
+      min-width: 300px;
+    }
+    
+    .contact-card, .why-choose {
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 15px; /* More rounded corners */
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      margin-bottom: 25px;
+      transition: transform 0.3s ease;
+    }
+    
+    .contact-card:hover, .why-choose:hover {
+      transform: translateY(-5px);
+    }
+    
+    .contact-card h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 25px;
+      color: #005646;
+      font-size: 24px;
+    }
+    
+    .contact-card p {
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      color: #666;
+    }
+    
+    .contact-card i {
+      color: #4CAF50; /* A classic, friendly green */
+      font-size: 22px;
+      width: 30px;
+      text-align: center;
+      margin-top: 2px;
+    }
+    
+    .why-choose h4 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      margin: 0 0 12px 0;
+      color: #4CAF50;
+      font-size: 18px;
+    }
+    
+    .why-choose ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    
+    .why-choose li {
+      margin-bottom: 10px;
+      color: #555;
+      font-size: 15px;
+    }
+
+    .contact-form {
+      flex: 1.2;
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+    
+    .contact-form h3 {
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 15px;
+      color: #005646;
+      font-size: 28px;
+    }
+    
+    .contact-form p.small-note {
+      color: #777;
+      margin-bottom: 30px;
+      font-size: 15px;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 25px;
+      margin-bottom: 20px;
+    }
+    
+    .form-group {
+      flex: 1;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #333;
+      font-size: 15px;
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      font-size: 15px;
+      box-sizing: border-box;
+      background-color: #f9f9f9;
+      transition: all 0.3s ease;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: #4CAF50;
+      box-shadow: 0 0 8px rgba(76, 175, 80, 0.2);
+      background-color: #fff;
+    }
+    
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    
+    .submit-btn {
+      background: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 15px 25px;
+      border-radius: 8px;
+      font-size: 17px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    
+    .submit-btn:hover {
+      background: #388E3C;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    
+    .privacy-note {
+      text-align: center;
+      font-size: 13px;
+      color: #999;
+      margin-top: 15px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px 40px;
+      }
+      .contact-form, .contact-info {
+        padding: 20px;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .logo {
+        position: static;
+        margin: 20px auto 0;
+        display: block;
+      }
+      h1 {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="data:image/jpeg;base64,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" alt="Company Logo" class="logo">
+
+  <h1>Contact Our Team</h1>
+  <p class="subtitle">Ready to discuss your project? Our experts are here to provide personalized solutions and answer all your questions.</p>
+
+  <div class="container">
+    <div class="contact-info">
+      <div class="contact-card">
+        <h3>Let's Connect</h3>
+        <p><i class="fas fa-phone"></i> <span><strong>Phone</strong><br>+1 (555) 123-4567<br>Mon-Fri 9AM-6PM EST</span></p>
+        <p><i class="fas fa-envelope"></i> <span><strong>Email</strong><br>contact@company.com<br>Response within 2 hours</span></p>
+        <p><i class="fas fa-map-marker-alt"></i> <span><strong>Office</strong><br>123 Business Avenue<br>New York, NY 10001</span></p>
+      </div>
+      <div class="why-choose">
+        <h4>Why Choose Us?</h4>
+        <ul>
+          <li>24/7 Customer Support</li>
+          <li>Industry-Leading Expertise</li>
+          <li>Trusted by 1000+ Companies</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h3>Send us a message</h3>
+      <p class="small-note">Fill out the form below and our team will get back to you within 24 hours.</p>
+      <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00Dal000004XwMH" method="POST">
+        <input type="hidden" name="oid" value="00Dal000004XwMH">
+        <input type="hidden" name="retURL" value="http://salesforce.com">
+        <input type="hidden" name="lead_source" value="Web">
+        <input type="hidden" name="status" value="Open - Not Contacted">
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first_name">First Name *</label>
+            <input id="first_name" name="first_name" maxlength="40" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name *</label>
+            <input id="last_name" name="last_name" maxlength="80" type="text" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Phone Number *</label>
+            <input id="mobile" name="mobile" maxlength="40" type="tel" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input id="email" name="email" maxlength="80" type="email" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="company">Company *</label>
+            <input id="company" name="company" maxlength="40" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="city">City *</label>
+            <input id="city" maxlength="40" name="city" type="text" required>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="state">State/Province *</label>
+            <input id="state" maxlength="20" name="state" type="text" required>
+          </div>
+          <div class="form-group">
+            <label for="country">Country *</label>
+            <input id="country" maxlength="40" name="country" type="text" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="00Nal000011dmq5" name="00Nal000011dmq5" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      <p class="privacy-note">By submitting this form, you agree to our privacy policy and terms of service.</p>
+    </div>
+  </div>
+
+</body>
+</html>
